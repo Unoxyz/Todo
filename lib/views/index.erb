@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Todo list</title>
+  </head>
+  <body>
+    <a href="/todos/new">New</a>
+    <ul>
+    <% todos.each do |todo| %>
+      <li>
+        <a href="/todos/<%= todo.id %>/edit"><%= todo.title%></a>
+        <form class="" action="/todos/<%= todo.id %>" method="post">
+          <input type="hidden" name="_method" value="delete" />
+          <button type="submit" name="button">Delete</button>
+        </form>
+        <br>
+        <%= todo.description.gsub(/\r\n/, "<br> ") %>
+      </li>
+    <% end %>
+  </ul>
+  </body>
+</html>

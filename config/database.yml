@@ -1,0 +1,7 @@
+---
+  test:
+    adapter: sqlite3
+    database: db/todo_test.sqlite3
+  development:
+    adapter: sqlite3
+    database: db/todo_test.sqlite3
