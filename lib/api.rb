@@ -9,7 +9,6 @@ class TodoAPI < Sinatra::Base
 
   # 목록 화면
   get '/todos' do
-    # Todo.create(title: 'make an app', description: 'start anything')
     erb :index, locals: {todos: Todo.all}
   end
 
@@ -41,14 +40,14 @@ class TodoAPI < Sinatra::Base
       title: title,
       description: description
     )
-    redirect '/todos'
+    redirect '/'
   end
 
   # 삭제
   delete '/todos/:id' do
     todo = Todo.find(params[:id])
     todo.destroy
-    redirect '/todos'
+    redirect '/'
   end
 
 end

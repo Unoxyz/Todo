@@ -1,17 +1,16 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>New Todo</title>
-  </head>
-  <body>
-    <a href="/todos">&lt; List</a>
-    <h1>New Todo</h1>
-    <form class="" action="/todos/<%= todo.id %>" method="post">
-      <input type="text" name="title" value="<%= todo.title %>"><br>
-      <textarea name="description" rows="8" cols="40"><%= todo.description %></textarea><br>
-      <input type="hidden" name="_method" value="put">
-      <button type="submit" name="button">submit</button>
-    </form>
-  </body>
-</html>
+<h2>Edit Todo</h2>
+<form action="/todos/<%= todo.id %>" method="post" class="col-xs-12 col-sm-10 col-md-8">
+  <div class="form-group">
+    <label for="input_title">Title</label>
+    <input id="input_title" type="text" name="title" value="<%= todo.title %>" class="form-control" autofocus>
+  </div>
+  <div class="form-group">
+    <label for="input_description">Description</label>
+    <textarea id="input_description" name="description" rows="8" cols="40" class="form-control"><%= todo.description %></textarea><br>
+  </div>
+  <div class="form-group">
+    <input type="hidden" name="_method" value="put">
+    <button type="submit" name="button" class="btn btn-primary">Save</button>
+    <a href="/todos" class="btn btn-link">Cancel</a>
+  </div>
+</form>
