@@ -5,3 +5,6 @@
   development:
     adapter: sqlite3
     database: db/todo_test.sqlite3
+  production:
+    adapter: sqlite3
+    database: db/todo_test.sqlite3
